@@ -1,0 +1,109 @@
+# RAG AI Service - Frontend Project Structure
+
+```
+/airiam-rag-frontend
+├── .env.local                   # Environment variables (local development)
+├── .env.production              # Environment variables (production)
+├── .gitignore                   # Git ignore file
+├── README.md                    # Project documentation
+├── next.config.js               # Next.js configuration
+├── package.json                 # Package dependencies
+├── tsconfig.json                # TypeScript configuration
+├── tailwind.config.js           # Tailwind CSS configuration
+├── postcss.config.js            # PostCSS configuration
+├── /public                      # Static assets
+│   ├── /images                  # Image assets
+│   │   ├── logo.svg             # Airiam logo
+│   │   └── ...
+│   └── /icons                   # Icon assets
+├── /src                         # Source code
+│   ├── /app                     # Next.js App Router
+│   │   ├── layout.tsx           # Root layout
+│   │   ├── page.tsx             # Home page (redirects to dashboard)
+│   │   ├── /auth                # Authentication routes
+│   │   │   ├── login/page.tsx   # Login page
+│   │   │   └── register/page.tsx # Registration page
+│   │   ├── /dashboard           # Dashboard routes
+│   │   │   ├── layout.tsx       # Dashboard layout with sidebar
+│   │   │   ├── page.tsx         # Main dashboard page
+│   │   │   └── /analytics       # Analytics sub-route
+│   │   ├── /chat                # Chat interface routes
+│   │   │   ├── layout.tsx       # Chat layout
+│   │   │   ├── page.tsx         # Chat list page
+│   │   │   └── /[id]            # Individual chat route
+│   │   │       └── page.tsx     # Individual chat page
+│   │   ├── /files               # File analysis routes
+│   │   │   ├── layout.tsx       # File analysis layout
+│   │   │   ├── page.tsx         # File list/upload page
+│   │   │   └── /[id]            # Individual file analysis route
+│   │   │       └── page.tsx     # Individual file analysis page
+│   │   └── /admin               # Admin panel routes
+│   │       ├── layout.tsx       # Admin layout
+│   │       ├── page.tsx         # Admin dashboard
+│   │       ├── /users           # User management
+│   │       └── /tenants         # Tenant management
+│   ├── /components              # UI Components
+│   │   ├── /ui                  # Base UI components
+│   │   │   ├── button.tsx       # Button component
+│   │   │   ├── card.tsx         # Card component
+│   │   │   ├── input.tsx        # Input component
+│   │   │   └── ...              # Other UI components
+│   │   ├── /layout              # Layout components
+│   │   │   ├── sidebar.tsx      # Sidebar navigation
+│   │   │   ├── header.tsx       # Header with user menu
+│   │   │   └── ...
+│   │   ├── /auth                # Authentication components
+│   │   │   ├── login-form.tsx   # Login form
+│   │   │   └── register-form.tsx # Registration form
+│   │   ├── /dashboard           # Dashboard components
+│   │   │   ├── usage-stats.tsx  # Usage statistics chart
+│   │   │   ├── credit-consumption.tsx # Credit consumption chart
+│   │   │   ├── activity-log.tsx # Activity log table
+│   │   │   └── ...
+│   │   ├── /chat                # Chat components
+│   │   │   ├── chat-list.tsx    # List of chat conversations
+│   │   │   ├── message-list.tsx # List of messages in a conversation
+│   │   │   ├── message-input.tsx # Message input field
+│   │   │   └── ...
+│   │   ├── /files               # File components
+│   │   │   ├── file-uploader.tsx # File upload component
+│   │   │   ├── cloud-connector.tsx # Cloud storage connector
+│   │   │   ├── file-list.tsx    # List of files
+│   │   │   ├── file-tagger.tsx  # File tagging component
+│   │   │   └── ...
+│   │   └── /admin               # Admin components
+│   ├── /lib                     # Utility libraries
+│   │   ├── /api                 # API client functions
+│   │   │   ├── auth.ts          # Authentication API
+│   │   │   ├── files.ts         # File API
+│   │   │   ├── chat.ts          # Chat API
+│   │   │   └── ...
+│   │   ├── /utils               # Utility functions
+│   │   │   ├── formatters.ts    # Data formatters
+│   │   │   ├── validators.ts    # Form validators
+│   │   │   └── ...
+│   │   └── /constants           # Constants used across the app
+│   ├── /hooks                   # Custom React hooks
+│   │   ├── use-auth.ts          # Authentication hook
+│   │   ├── use-files.ts         # File management hook
+│   │   └── ...
+│   ├── /redux                   # Redux state management
+│   │   ├── store.ts             # Redux store
+│   │   ├── /slices              # Redux slices
+│   │   │   ├── authSlice.ts     # Authentication slice
+│   │   │   ├── filesSlice.ts    # Files slice
+│   │   │   ├── chatSlice.ts     # Chat slice
+│   │   │   └── ...
+│   │   └── /thunks              # Redux thunks for async actions
+│   ├── /types                   # TypeScript type definitions
+│   │   ├── auth.ts              # Authentication types
+│   │   ├── file.ts              # File types
+│   │   ├── chat.ts              # Chat types
+│   │   └── ...
+│   └── /styles                  # Global styles
+│       └── globals.css          # Global CSS
+└── /deployment                  # Deployment configurations
+    ├── azure-pipelines.yml      # Azure DevOps pipeline config
+    ├── azure-deploy.md          # Azure deployment guide
+    └── codesandbox-setup.md     # CodeSandbox setup guide
+```
